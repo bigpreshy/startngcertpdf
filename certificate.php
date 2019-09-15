@@ -1,31 +1,95 @@
 <?php
+require('Classes/fpdf.php');
 
-require('Classes/rotation.php');
 
 
 $fullName = strtoupper('Precious Luke'); // I know this will be dynamic and will come from a db
 $link = 'start.ng/verify/16N5F3Z';  // I know this will be dynamic and will come from a db
 $score = 62;  // I know this will be dynamic and will come from a db
+$back;
 
 
-class NPDF extends PDF_Rotate
+class NPDF extends FPDF
 {
+    
 function Header()
 {
     //Put the watermark
-   // $customimg = Image('images/hng.png');
-    $this->SetFont('Arial','B',25);
-    $this->SetTextColor(255,192,203);
-    $this->RotatedText(20,180,'Startdotng (Beginner Software Development Training)',48);
+  
+    //Background
+    $this->Image('images/bg.jpg',3,3,30,27);
+    $this->Image('images/bg.jpg',40,3,30, 27);
+    $this->Image('images/bg.jpg',77,3,30, 27);
+    $this->Image('images/bg.jpg',114,3,30, 27);
+    $this->Image('images/bg.jpg',151,3,30, 27);
+    $this->Image('images/bg.jpg',188,3,30, 27);
+
+    $this->Image('images/bg.jpg',3,33,30,27);
+    $this->Image('images/bg.jpg',40,33,30, 27);
+    $this->Image('images/bg.jpg',77,33,30, 27);
+    $this->Image('images/bg.jpg',114,33,30, 27);
+    $this->Image('images/bg.jpg',151,33,30, 27);
+    $this->Image('images/bg.jpg',188,33,30, 27);
+
+    $this->Image('images/bg.jpg',3,63,30,27);
+    $this->Image('images/bg.jpg',40,63,30, 27);
+    $this->Image('images/bg.jpg',77,63,30, 27);
+    $this->Image('images/bg.jpg',114,63,30, 27);
+    $this->Image('images/bg.jpg',151,63,30, 27);
+    $this->Image('images/bg.jpg',188,63,30, 27);
+
+    $this->Image('images/bg.jpg',3,93,30,27);
+    $this->Image('images/bg.jpg',40,93,30, 27);
+    $this->Image('images/bg.jpg',77,93,30, 27);
+    $this->Image('images/bg.jpg',114,93,30, 27);
+    $this->Image('images/bg.jpg',151,93,30, 27);
+    $this->Image('images/bg.jpg',188,93,30, 27);
+
+    $this->Image('images/bg.jpg',3,123,30,27);
+    $this->Image('images/bg.jpg',40,123,30, 27);
+    $this->Image('images/bg.jpg',77,123,30, 27);
+    $this->Image('images/bg.jpg',114,123,30, 27);
+    $this->Image('images/bg.jpg',151,123,30, 27);
+    $this->Image('images/bg.jpg',188,123,30, 27);
+    
+    $this->Image('images/bg.jpg',3,153,30,27);
+    $this->Image('images/bg.jpg',40,153,30, 27);
+    $this->Image('images/bg.jpg',77,153,30, 27);
+    $this->Image('images/bg.jpg',114,153,30, 27);
+    $this->Image('images/bg.jpg',151,153,30, 27);
+    $this->Image('images/bg.jpg',188,153,30, 27);
+
+    $this->Image('images/bg.jpg',3,183,30,27);
+    $this->Image('images/bg.jpg',40,183,30, 27);
+    $this->Image('images/bg.jpg',77,183,30, 27);
+    $this->Image('images/bg.jpg',114,183,30, 27);
+    $this->Image('images/bg.jpg',151,183,30, 27);
+    $this->Image('images/bg.jpg',188,183,30, 27);
+
+    $this->Image('images/bg.jpg',3,213,30,27);
+    $this->Image('images/bg.jpg',40,213,30, 27);
+    $this->Image('images/bg.jpg',77,213,30, 27);
+    $this->Image('images/bg.jpg',114,213,30, 27);
+    $this->Image('images/bg.jpg',151,213,30, 27);
+    $this->Image('images/bg.jpg',188,213,30, 27);
+
+    $this->Image('images/bg.jpg',3,243,30,27);
+    $this->Image('images/bg.jpg',40,243,30, 27);
+    $this->Image('images/bg.jpg',77,243,30, 27);
+    $this->Image('images/bg.jpg',114,243,30, 27);
+    $this->Image('images/bg.jpg',151,243,30, 27);
+    $this->Image('images/bg.jpg',188,243,30, 27);
+
+    $this->Image('images/bg.jpg',3,273,30,27);
+    $this->Image('images/bg.jpg',40,273,30, 27);
+    $this->Image('images/bg.jpg',77,273,30, 27);
+    $this->Image('images/bg.jpg',114,273,30, 27);
+    $this->Image('images/bg.jpg',151,273,30, 27);
+    $this->Image('images/bg.jpg',188,273,30, 27);
+  //Background ends
+  
 }
 
-function RotatedText($x, $y, $txt, $angle)
-{
-    //Text rotated around its origin
-    $this->Rotate($angle,$x,$y);
-    $this->Text($x,$y,$txt);
-    $this->Rotate(0);
-}
 }
 $pdf=new NPDF();
 
@@ -135,6 +199,8 @@ $pdf->SetY(190.654);
 $pdf->SetFontSize(12);
 $pdf-> SetTextColor(0,0,0);
 $pdf ->Cell(0 , 7.604, "Supported By", 0, 1, "L"); //true)
+
+
 
 $pdf->output();
 

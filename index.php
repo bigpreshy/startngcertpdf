@@ -55,9 +55,9 @@
 
 
     <h5>Copy Link to Certificate</h5>
-    <form class="form-inline mb-3">
+    <form method="post" class="form-inline mb-3">
         <div class="form-group mr-2 mb-2">
-            <input type="text" class="form-control" id="certificate-link" size="60" value="https://start.ng/verify/16N5F3Z">
+            <input name="verify" type="text" class="form-control" id="certificate-link" size="60"< value="https://start.ng/verify/16N5F3Z">
         </div>
         <button class="btn btn-outline-primary mb-2" onclick="copyLink()"><i class="fa fa-clone"></i> Copy Link</button>
     </form>
